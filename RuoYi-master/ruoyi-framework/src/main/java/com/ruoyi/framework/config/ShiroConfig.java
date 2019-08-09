@@ -285,6 +285,8 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/logout" , "logout");
         // 不需要拦截的访问
         filterChainDefinitionMap.put("/login" , "anon,captchaValidate");
+        // 不需要拦截的访问
+        filterChainDefinitionMap.put("/monitor/job/**" , "anon,captchaValidate");
 
         Map<String, Filter> filters = new LinkedHashMap<>();
         filters.put("onlineSession" , onlineSessionFilter());
